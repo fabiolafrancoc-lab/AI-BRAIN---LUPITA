@@ -1,0 +1,16 @@
+{
+  "name": "lupita-lambda-processor",
+  "version": "1.0.0",
+  "description": "AWS Lambda para procesar grabaciones de Lupita AI",
+  "main": "process-call.js",
+  "scripts": {
+    "zip": "zip -r lambda-package.zip . -x '*.git*'",
+    "deploy": "aws lambda update-function-code --function-name lupita-process-call --zip-file fileb://lambda-package.zip"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1499.0",
+    "axios": "^1.6.2"
+  },
+  "author": "Fabiola Franco - SaludCompartida",
+  "license": "PRIVATE"
+}
